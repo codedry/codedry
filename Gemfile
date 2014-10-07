@@ -34,6 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'rails_12factor'
+gem 'unicorn'
+
+group :development do
+  gem 'foreman'
+end
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
