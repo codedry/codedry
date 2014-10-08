@@ -1,0 +1,14 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+john:
+  name: John Doe
+  email: john.doe@example.com
+  message: |
+    Hi Codedry,
+
+    I would love to speak to you about a very insteresting project for my pet store.
+    Reach me at 1-555-555-0001
+
+    Regards,
+    John
+
