@@ -37,8 +37,11 @@ gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'rails_12factor'
 gem 'unicorn'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development do
   gem 'foreman'
