@@ -42,6 +42,7 @@ gem 'unicorn'
 
 group :development do
   gem 'foreman'
+  gem 'thin'
 end
 
 group :development, :test do
