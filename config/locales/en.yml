@@ -1,4 +1,4 @@
 en:
   contacts:
     success:
-      message: "Your message was successfully sent. We'll be in touch shortly..."
+      message: "Thanks %{first_name}! We will be in touch shortly..."

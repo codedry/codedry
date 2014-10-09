@@ -8,14 +8,14 @@ class ContactUsTest < ActionDispatch::IntegrationTest
     click_link 'Contact'
 
     within('#contact-form') do
-      fill_in 'contact_name',     with: 'Marcel Morgan'
-      fill_in 'contact_email',    with: 'marcel.morgan@example.com'
+      fill_in 'contact_name',     with: 'John Doe'
+      fill_in 'contact_email',    with: 'john.doe@example.com'
       fill_in 'contact_message',  with: 'Hello'
+
+      click_button 'Send Message'
     end
 
-    click_button 'Send Message'
-
-    expected_message = "Your message was successfully sent"
+    expected_message = "Thanks John! We will be in touch shortly..."
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
   end
 end
