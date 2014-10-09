@@ -1,12 +1,12 @@
 class Notifier < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "no-reply@codedry.com"
 
   def contact_received(contact)
     @contact = contact
 
     options = {
-      to:       "contact@example.com",
-      reply_to: @contact.email,
+      from:     "#{@contact.name} <#{@contact.email}>",
+      to:       Rails.application.config.admin_to_email,
       subject:  "Message from #{@contact.name}"
     }
 
