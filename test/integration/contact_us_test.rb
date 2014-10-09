@@ -17,5 +17,7 @@ class ContactUsTest < ActionDispatch::IntegrationTest
 
     expected_message = "Thanks John! We will be in touch shortly..."
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
+
+    assert_not ActionMailer::Base.deliveries.empty?, 'No email sent'
   end
 end
