@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
-  def index; end
+  def index
+    @contact = Contact.new
+  end
 
 end

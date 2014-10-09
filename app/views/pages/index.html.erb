@@ -34,7 +34,7 @@ fjs.parentNode.insertBefore(js, fjs);
                         <li class="nav-item"><a href="tour.html">Tour</a></li>
                         <li class="nav-item"><a href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a href="#contactus">Contact</a></li>
                         <li class="nav-item"><a href="#">Login</a></li>
                         <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-primary" href="pricing.html">Get Started</a></li>
                     </ul><!--//nav-->
@@ -434,16 +434,13 @@ fjs.parentNode.insertBefore(js, fjs);
     </section><!--//faq-->
 
     <!-- ******SIGNUP****** -->
-    <section id="signup" class="signup">
+    <section id="contactus" class="signup">
         <div class="container text-center">
             <h2 class="title">Ready to kickstart your business with Tempo?</h2>
             <p class="summary">Sign up to try Tempo FREE for 30 days! No credit card needed.</p>
-            <form class="signup-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter your email address">
-                </div>
-                <button type="submit" class="btn btn-cta btn-cta-primary">SIGN UP</button>
-            </form><!--//signup-form-->
+            <div id="contact-form">
+              <%= render "contacts/form" %>
+            </div>
         </div>
     </section><!--//signup-->
 

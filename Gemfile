@@ -59,5 +59,8 @@ group :development, :test do
   gem 'spring'
 
   gem 'fivemat'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'poltergeist'
 end
 
