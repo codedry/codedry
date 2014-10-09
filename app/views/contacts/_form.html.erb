@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-    <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+    <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
     <%= f.text_area :message, class: 'form-control', placeholder: 'Message' %>
     <%= f.submit 'Send Message', class: 'btn btn-cta btn-cta-primary' %>
   </div>
