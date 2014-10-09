@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.js { render :show }
+        format.js { render :success }
       else
         format.js { render :new }
       end

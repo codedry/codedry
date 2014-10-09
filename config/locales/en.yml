@@ -1,4 +1,4 @@
 en:
   contacts:
-    show:
-      success: "Your message was successfully sent. We'll be in touch shortly..."
+    success:
+      message: "Your message was successfully sent. We'll be in touch shortly..."
