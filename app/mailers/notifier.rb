@@ -6,7 +6,8 @@ class Notifier < ActionMailer::Base
 
     options = {
       reply_to: "#{@contact.name} <#{@contact.email}>",
-      to:       Rails.application.config.admin_to_email,
+      from:     "#{@contact.name} <#{contact_email}>",
+      to:       "Codedry <#{contact_email}>",
       subject:  "Message from #{@contact.name}"
     }
 
@@ -18,10 +19,15 @@ class Notifier < ActionMailer::Base
 
     options = {
       to:       "#{@contact.name} <#{@contact.email}>",
-      from:     Rails.application.config.admin_to_email,
+      from:     "Codedry <#{contact_email}>",
       subject:  "We have received your message #{@contact.first_name}"
     }
 
     mail(options)
   end
+
+  private def contact_email
+    @contact_email ||= Rails.application.config.contact_email
+  end
+
 end

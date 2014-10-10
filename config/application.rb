@@ -34,6 +34,6 @@ module Codedry
       enable_starttls_auto: true,
     }
 
-    config.admin_to_email = ENV.fetch('ADMIN_TO_EMAIL') { 'test@example.com' }
+    config.contact_email = 'contact@codedry.com'
   end
 end

@@ -20,14 +20,15 @@ class ContactUsTest < ActionDispatch::IntegrationTest
 
     contactus_email = find_email!(subject: /^Message from John Doe$/)
 
-    assert_equal ['no-reply@codedry.com'],  contactus_email.from
+    contact_email = Rails.application.config.contact_email
+    assert_equal [contact_email],           contactus_email.from
     assert_equal ['john.doe@example.com'],  contactus_email.reply_to
-    assert_equal ['test@example.com'],      contactus_email.to
+    assert_equal [contact_email],           contactus_email.to
     assert_match(/Hello/,                   contactus_email.body.to_s)
 
     contactus_acknowledgement_email = find_email!(subject: /^We have received your message John$/)
 
-    assert_equal ['test@example.com'],      contactus_acknowledgement_email.from
+    assert_equal [contact_email],           contactus_acknowledgement_email.from
     assert_equal ['john.doe@example.com'],  contactus_acknowledgement_email.to
     assert_match(/Hi John/,                 contactus_acknowledgement_email.body.to_s)
     assert_match(/Thank you for taking the time to send us a message. We will be in touch shortly./,
