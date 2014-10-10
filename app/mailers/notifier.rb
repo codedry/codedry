@@ -12,4 +12,16 @@ class Notifier < ActionMailer::Base
 
     mail(options)
   end
+
+  def contact_received_acknowledgement(contact)
+    @contact = contact
+
+    options = {
+      to:       "#{@contact.name} <#{@contact.email}>",
+      from:     Rails.application.config.admin_to_email,
+      subject:  "We have received your message #{@contact.name}"
+    }
+
+    mail(options)
+  end
 end
