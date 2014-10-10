@@ -38,6 +38,7 @@ gem "font-awesome-rails"
 # gem 'capistrano-rails', group: :development
 
 gem 'unicorn'
+gem 'dotenv-rails'
 
 group :production do
   gem 'rails_12factor'
