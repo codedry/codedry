@@ -19,7 +19,7 @@ class Notifier < ActionMailer::Base
     options = {
       to:       "#{@contact.name} <#{@contact.email}>",
       from:     Rails.application.config.admin_to_email,
-      subject:  "We have received your message #{@contact.name}"
+      subject:  "We have received your message #{@contact.first_name}"
     }
 
     mail(options)
