@@ -5,7 +5,7 @@ class Notifier < ActionMailer::Base
     @contact = contact
 
     options = {
-      from:     "#{@contact.name} <#{@contact.email}>",
+      reply_to: "#{@contact.name} <#{@contact.email}>",
       to:       Rails.application.config.admin_to_email,
       subject:  "Message from #{@contact.name}"
     }

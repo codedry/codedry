@@ -20,7 +20,8 @@ class ContactUsTest < ActionDispatch::IntegrationTest
 
     contactus_email = find_email!(subject: /^Message from John Doe$/)
 
-    assert_equal ['john.doe@example.com'],  contactus_email.from
+    assert_equal ['no-reply@codedry.com'],  contactus_email.from
+    assert_equal ['john.doe@example.com'],  contactus_email.reply_to
     assert_equal ['test@example.com'],      contactus_email.to
     assert_match(/Hello/,                   contactus_email.body.to_s)
 
