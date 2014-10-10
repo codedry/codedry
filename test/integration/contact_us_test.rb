@@ -18,6 +18,11 @@ class ContactUsTest < ActionDispatch::IntegrationTest
     expected_message = "Thanks John! We will be in touch shortly..."
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
 
-    assert_not ActionMailer::Base.deliveries.empty?, 'No email sent'
+    contactus_email = ActionMailer::Base.deliveries.find {|email| email.subject = "Message from John Doe" }
+    assert_not_nil contactus_email
+
+    assert_equal ['john.doe@example.com'],  contactus_email.from
+    assert_equal ['test@example.com'],      contactus_email.to
+    assert_match(/Hello/,                   contactus_email.body.to_s)
   end
 end
