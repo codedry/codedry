@@ -13,5 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-migrate-1.2.1.min
+//= require detectmobilebrowser
 //= require bootstrap-sprockets
-//= require_tree .
+//= require back-to-top
+//= require jquery.placeholder
+//= require jquery.inview.min
+//= require jquery.fitvids
+//= require main
