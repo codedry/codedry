@@ -4,8 +4,10 @@
 <%= render 'shared/head' %>
 
 <body>
-
-<%= yield %>
-
+  <div class="wrapper">
+    <%= render 'shared/header' %>
+    <%= yield %>
+  </div>
+  <%= render 'shared/footer' %>
 </body>
 </html>
