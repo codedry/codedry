@@ -18,13 +18,13 @@ class ContactUsTest < ActionDispatch::IntegrationTest
     expected_message = "Thanks John! We will be in touch shortly..."
     assert page.has_content?(expected_message), "'#{expected_message}' was not found"
 
-    contactus_email = find_email!(subject: /Message from John Doe/)
+    contactus_email = find_email!(subject: /^Message from John Doe$/)
 
     assert_equal ['john.doe@example.com'],  contactus_email.from
     assert_equal ['test@example.com'],      contactus_email.to
     assert_match(/Hello/,                   contactus_email.body.to_s)
 
-    contactus_acknowledgement_email = find_email!(subject: /We have received your message John/)
+    contactus_acknowledgement_email = find_email!(subject: /^We have received your message John$/)
 
     assert_equal ['test@example.com'],      contactus_acknowledgement_email.from
     assert_equal ['john.doe@example.com'],  contactus_acknowledgement_email.to
