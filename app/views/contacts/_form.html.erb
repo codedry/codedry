@@ -1,8 +1,8 @@
 <div class="contact-form col-md-6 col-sm-12 col-xs-12 col-md-offset-3 col-sm-offset-0 col-xs-offset-0">
   <%= form_for(@contact, remote: true, html: { class: 'form' }) do |f| %>
     <% if @contact.errors.any? %>
-      <div id="error_explanation">
-        <h3>Oops... <%= pluralize(@contact.errors.count, "error") %> prevented us from saving your message: </h2>
+      <div id="error_explanation" class="alert alert-danger">
+        <h4>Oops! Please correct the following errors and submit again: </h4>
 
         <ul>
         <% @contact.errors.full_messages.each do |message| %>
@@ -13,7 +13,6 @@
     <% end %>
 
     <div class="form-group name">
-
       <%= f.text_field :name, class: 'form-control', placeholder: 'Your name' %>
     </div>
     <div class="form-group email">
