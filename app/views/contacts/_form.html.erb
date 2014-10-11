@@ -1,21 +1,27 @@
-<%= form_for(@contact, remote: true, html: { class: 'signup-form' }) do |f| %>
-  <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <h3>Oops... <%= pluralize(@contact.errors.count, "error") %> prevented us from saving your message: </h2>
+<div class="contact-form col-md-6 col-sm-12 col-xs-12 col-md-offset-3 col-sm-offset-0 col-xs-offset-0">
+  <%= form_for(@contact, remote: true, html: { class: 'form' }) do |f| %>
+    <% if @contact.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h4>Oops! Please correct the following errors and submit again: </h4>
 
-      <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group name">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Your name' %>
     </div>
+    <div class="form-group email">
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Your email' %>
+    </div>
+    <div class="form-group message">
+      <%= f.text_area :message, class: 'form-control', placeholder: 'Your message', rows: 8 %>
+    </div>
+
+    <%= f.submit 'Send Message', class: 'btn btn-block btn-cta-primary' %>
   <% end %>
-
-  <div class="form-group">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-    <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
-    <%= f.text_area :message, class: 'form-control', placeholder: 'Message' %>
-    <%= f.submit 'Send Message', class: 'btn btn-cta btn-cta-primary' %>
-  </div>
-
-<% end %>
+</div>
