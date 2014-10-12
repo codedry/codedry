@@ -19,4 +19,9 @@ class ContactTest < ActiveSupport::TestCase
       assert_equal ["is not an email"], @contact.errors[:email]
     end
   end
+
+  test "first name" do
+    @contact.name = "First Last"
+    assert_equal "First", @contact.first_name
+  end
 end
