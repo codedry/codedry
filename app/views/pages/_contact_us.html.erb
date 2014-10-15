@@ -4,38 +4,20 @@
     <p class="intro">We'd love to hear from you.</p>
 
     <div class="row">
-      <div class="item col-md-4 col-sm-12 col-xs-12">
-        <div class="item-inner">
-          <div class="icon"><%= fa_icon "envelope" %></div>
-          <div class="details">
-            <h4>Email us:</h4>
-            <p><%= render 'shared/contact_email_link' %></p>
-          </div>
-        </div>
-      </div>
+      <%= render layout: 'contacts/item', locals: { title: "Email us:", icon_name: "envelope" } do %>
+        <%= render 'shared/contact_email_link' %>
+      <% end %>
 
-      <div class="item col-md-4 col-sm-12 col-xs-12">
-        <div class="item-inner">
-          <div class="icon"><%= fa_icon "twitter" %></div>
-          <div class="details">
-            <h4>Follow us:</h4>
-            <p><%= link_to "@codedry", "https://twitter.com/codedry", target: "_blank" %></p>
-          </div>
-        </div>
-      </div>
+      <%= render layout: 'contacts/item', locals: { title: "Follow us:", icon_name: "twitter" } do %>
+        <%= link_to "@codedry", "https://twitter.com/codedry", target: "_blank" %>
+      <% end %>
 
-      <div class="item col-md-4 col-sm-12 col-xs-12 last">
-        <div class="item-inner">
-          <div class="icon"><%= fa_icon "linkedin" %></div>
-          <div class="details">
-            <h4>Connect with us:</h4>
-            <p><%= link_to "Codedry", "https://www.linkedin.com/company/codedry", target: "_blank" %></p>
-          </div>
-        </div>
-      </div>
+      <%= render layout: 'contacts/item', locals: { title: "Connect with us:", icon_name: "linkedin" } do %>
+        <%= link_to "Codedry", "https://www.linkedin.com/company/codedry", target: "_blank" %>
+      <% end %>
 
-    </div><!--//row-->
-  </div><!--//container-->
+    </div>
+  </div>
 </section>
 
 <section class="container contact-form-section">
