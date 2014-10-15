@@ -1,48 +1,45 @@
 <section id="contactus" class="contact-main section">
-    <div class="container text-center">
-      <h2 class="title">Get in touch</h2>
-      <p class="intro">We'd love to hear from you.</p>
+  <div class="container text-center">
+    <h2 class="title">Get in touch</h2>
+    <p class="intro">We'd love to hear from you.</p>
 
-      <div class="row">
-        <div class="item col-md-4 col-sm-12 col-xs-12">
-          <div class="item-inner">
-            <div class="icon"><%= fa_icon "envelope" %></div>
-            <div class="details">
-                <h4>Email us:</h4>
-                <p>
-                  <%= mail_to "contact@codedry.com", "contact@codedry.com", subject: "I want to learn more about Codedry" %>
-                </p>
-            </div><!--details-->
-          </div><!--//item-inner-->
-        </div><!--//item-->
+    <div class="row">
+      <div class="item col-md-4 col-sm-12 col-xs-12">
+        <div class="item-inner">
+          <div class="icon"><%= fa_icon "envelope" %></div>
+          <div class="details">
+            <h4>Email us:</h4>
+            <p><%= render 'shared/contact_email_link' %></p>
+          </div>
+        </div>
+      </div>
 
-        <div class="item col-md-4 col-sm-12 col-xs-12">
-          <div class="item-inner">
-            <div class="icon"><%= fa_icon "twitter" %></div>
-            <div class="details">
-              <h4>Follow us:</h4>
-              <p><%= link_to "@codedry", "https://twitter.com/codedry", target: "_blank" %></p>
-            </div><!--details-->
-          </div><!--//item-inner-->
-        </div><!--//item-->
+      <div class="item col-md-4 col-sm-12 col-xs-12">
+        <div class="item-inner">
+          <div class="icon"><%= fa_icon "twitter" %></div>
+          <div class="details">
+            <h4>Follow us:</h4>
+            <p><%= link_to "@codedry", "https://twitter.com/codedry", target: "_blank" %></p>
+          </div>
+        </div>
+      </div>
 
-        <div class="item col-md-4 col-sm-12 col-xs-12 last">
-          <div class="item-inner">
-            <div class="icon"><%= fa_icon "linkedin" %></div>
-            <div class="details">
-              <h4>Connect with us:</h4>
-              <p><%= link_to "Codedry", "https://www.linkedin.com/company/codedry", target: "_blank" %></p>
-            </div><!--details-->
-          </div><!--//item-inner-->
-        </div><!--//item-->
+      <div class="item col-md-4 col-sm-12 col-xs-12 last">
+        <div class="item-inner">
+          <div class="icon"><%= fa_icon "linkedin" %></div>
+          <div class="details">
+            <h4>Connect with us:</h4>
+            <p><%= link_to "Codedry", "https://www.linkedin.com/company/codedry", target: "_blank" %></p>
+          </div>
+        </div>
+      </div>
 
-      </div><!--//row-->
-    </div><!--//container-->
+    </div><!--//row-->
+  </div><!--//container-->
 </section>
 
 <section class="container contact-form-section">
   <h3 class="title text-center">Contact Form</h3>
-  <!-- <h2 class="title">Ready to kickstart your project/team with Codedry?</h2> -->
   <p class="intro text-center">Send us a message to tell us about your project or training needs</p>
   <div id="contact-form" class="row">
     <%= render "contacts/form" %>
