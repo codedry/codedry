@@ -19,5 +19,4 @@
 //= require back-to-top
 //= require jquery.placeholder
 //= require jquery.inview.min
-//= require jquery.fitvids
 //= require main
